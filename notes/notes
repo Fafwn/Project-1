@@ -6,6 +6,8 @@ ________________________________________________________________________________
 |This handles the text writing      | This handles the text logic      | This is for dev commands |       |  DESCRIPTION
 |_________________________________________________________________________________________________________|
 
+
+
 ___________________________________________________________________________________________________________
 |                                               TYPEWRITER                                                | SECOND LEVEL
 |_________________________________________________________________________________________________________|
@@ -15,12 +17,24 @@ ________________________________________________________________________________
 | settings using debug              | E.g. change colour, message header   | typewriter uses              |
 |_________________________________________________________________________________________________________|
 
+
+
 ___________________________________________________________________________________________________________
 |                                               SETTINGS                                                  |  THIRD LEVEL
 |_________________________________________________________________________________________________________|
-|           VALUES.CSV               |           HANDLER.py       |          DICTIONARY.txt               | FOURTH LEVEL
+|           VALUES.csv               |         HANDLER.py         |          DICTIONARY.txt               | FOURTH LEVEL
 |_________________________________________________________________________________________________________|
-|These store individual values        |Reads from VALUES.csv       |   Quick explanation on how it works  |  DESCRIPTION
-|e.g. Text size, Font, Colour         |Stores values in obj memory |    and how to add in new options     |
+|These store individual values       |Reads from VALUES.csv       |   Quick explanation on how it works   |  DESCRIPTION
+|e.g. Text size, Font, Colour        |Stores values in obj memory |    and how to add in new options      |
 |_________________________________________________________________________________________________________|
+
+___________________________________________________________________________________________________________________________________________
+|                                                             COMMANDS                                                                    |  THIRD LEVEL
+|_________________________________________________________________________________________________________________________________________|
+|           FLAGS.csv               |            MEMORY.py            |          DICTIONARY.txt         |         TRANSLATOR.py           | FOURTH LEVEL
+|_________________________________________________________________________________________________________________________________________|
+|Bunch o' flags with default values | Reads from FLAGS.csv            | Quick explanation on how it     | This is the part that performs  | DESCRIPTION
+|Easy to add new flags              | Essentially memory that updates | works & how to add  new options | text-based edits                |
+|_________________________________________________________________________________________________________________________________________|
+
 
