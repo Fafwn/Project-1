@@ -11,7 +11,7 @@ ________________________________________________________________________________
 ___________________________________________________________________________________________________________
 |                                               TYPEWRITER                                                | SECOND LEVEL
 |_________________________________________________________________________________________________________|
-|            SETTINGS               |            COMMANDS                  |           MEMORY             |  THIRD LEVEL
+|            SETTINGS               |            COMMANDS                  |           MEMORY.py          |  THIRD LEVEL
 |_________________________________________________________________________________________________________|
 | Setting handling. You can add new | Flag based system, pre-display edits | Physical memory that         |  DESCRIPTION
 | settings using debug              | E.g. change colour, message header   | typewriter uses              |
@@ -27,6 +27,8 @@ ________________________________________________________________________________
 |These store individual values       |Reads from VALUES.csv       |   Quick explanation on how it works   |  DESCRIPTION
 |e.g. Text size, Font, Colour        |Stores values in obj memory |    and how to add in new options      |
 |_________________________________________________________________________________________________________|
+
+
 
 ___________________________________________________________________________________________________________________________________________
 |                                                             COMMANDS                                                                    |  THIRD LEVEL
