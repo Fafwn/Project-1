@@ -4,14 +4,23 @@
 
 import csv
 
-parentDir = ""
-flags = ""
-flag = {}
-var = {}
+
+def __init__(self):
+    flag = {}
+    var = {}
+    create_memory(read_CSV("FLAGS.CSV"))
+
+
+def update_flag():
+    pass
+
+
+def update_var():
+    pass
 
 
 def read_CSV(file):
-    with open("%s%s" % (parentDir, flags), "r") as raw:
+    with open(file, "r") as raw:
         return [x for x in csv.reader(raw, delimiter=",")]
 
 
@@ -21,7 +30,7 @@ def create_memory(arr):
 
 
 if __name__ == "__main__":
-    parentDir = ""
-    flags = "FLAGS.CSV"
-    create_memory(read_CSV(flags))
-    #print(memory["gameBegin"])
+    flag = {}
+    var = {}
+    create_memory(read_CSV("FLAGS.CSV"))
+    print("%s%s" % (flag, var))
