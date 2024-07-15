@@ -1,0 +1,25 @@
+HI THERE
+
+simple explanation of how this branch works.
+
+MEMORY.py <- FLAGS.CSV
+MEMORY.py reads from FLAGS.CSV, loading in all the data. The data within FLAGS.CSV is ordered in the following:
+
+________________________________
+|Name|Variable(!)/Flag(?)|Value|
+|____|___________________|_____|
+
+MEMORY.py will then create 2 dictionaries:
+- Var [variables]
+- Flag [flags]
+
+MEMORY.py will then have built-in functions to update each list:
+COMPLETE THIS PART LOL
+
+
+| TRANSLATOR.py | MEMORY.py |
+These two will work together, where TRANSLATOR will work on a string based off flags noted in MEMORY
+For example:
+charHead = "-"
+
+"[charHead] Hello World!" > TRANSLATOR.py > "- Hello World!"
