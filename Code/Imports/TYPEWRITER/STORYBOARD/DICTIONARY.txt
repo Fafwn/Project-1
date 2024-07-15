@@ -1,0 +1,20 @@
+The intention for this file is to efficiently read STORYBOARD.txt in a fashion similar to cpu architecture.
+Each line break will represent a new Text Pointer (TP), and will begin with a bunch of flags before the text.
+
+For example, TP 39 = #!3npc1,Hello Traveller! My name is [?31]
+which would be the flags:
+# - All caps
+!npc1 - npc1 header
+, - separates flags from text
+Hello Traveller! My name is - Text
+[?31] - Pull character name from memory
+
+Which would be output to Typewriter as:
+
+- Hello Traveller! My name is [?31]
+Flags {All caps: True}
+
+You will also be able to jump to specific TPs, and there will be flags to represent the end of a "Scene".
+Storyboard will load a scene into "RAM" memory, loading in as much information as possible. For example, there could be
+a short conversation between the main and supporting character. STORYBOARD.py would load their "scene" into a stack and
+run the conversation back to Typewriter.py in order.

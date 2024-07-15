@@ -1,0 +1,18 @@
+~Hello Friend.
+~Hi there!
+NPC1~How are you doing
+~Why are you shouting
+~I don't know. anyway my name is _.
+^15
+~Anyway hows your mum
+~shes good :p
+#
+~random line
+~another random line
+^6
+~SO COOL WE DEFeATED THAT BOSS
+~isnt it just, _.
+#
+~Thats a cool name, POGGERS!!
+~thank you man!!
+/
