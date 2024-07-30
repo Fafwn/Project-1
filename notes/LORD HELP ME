@@ -1,0 +1,22 @@
+Tryna make sense of stuff
+
+SO you have the main program which is the top level
+
+then you have a secondary level which is fed directly to the main top level. these are the main subsections such as:
+character handling
+Text handling
+combat handling
+etc
+
+These secondary level functions will have third level objects that are directly used only by the corresponding secondary level handlers
+these work in a console terminal type of way, possessing their own individual internal commands, a input, and a output.
+You input data into the object, and it spits out corresponding data depending on internal logic.
+
+Secondary level functions will import all lower third level functions it needs and handles the passing of information between third level
+objects. each third level object will be a child object from a parent object called console that sorts out the formatting of the objects and ensures
+that they can all be read the same way and makes it easier to add new modules to the code.
+
+The main level will handle the logging, third level branch console importing, and the functional runtime of the program.
+
+
+I need to draw this out or something jesus fucking christ
