@@ -1,0 +1,40 @@
+I want a turn based RPG engine.
+
+like a simplified version of RPG maker on steam
+
+We need to do 90% of the work now, and hand out the engine as the final product so people can take, and build their own
+game up from this. There will be a large amount of developer tools that people can use to change internal variables like
+maximum level, stat spread, stats, character names, character sprites etc.
+
+The plan is to also have a product that can be entirely back-end, but also have an optional built in front end using
+TKInter
+
+We need it to have a writable story, so anyone can write custom text, triggers, optional branches etc
+
+They can then export their save into an executable file that then can be passed around as a individual product.
+
+I CANNOT emphasise the need for this to be adaptable, the user should be able to have ANY combination of stories, triggers,
+events, stats, etc and the executable file should always be deployed as a working product. The only error should be human error
+by the unique developer.
+
+There should be a huge testcase file that should test EACH individual function and test if it works. The functions that should
+be tested are the ones that have unique arguments, which means any function that takes a variable argument should be tested for every case
+such as extreme cases, random cases, etc. This testcase file should be only for us and not in the final product but should always
+return a pass before anything is produced.
+
+currently i want it to simply be a turn based engine, however, when an alpha version is made, im open to the idea of other game
+types being added. The point of coding modular is so that you can easily take modules out and replace them with custom plug-ins
+which would turn the game from a turn based rpg to a candy crush adventure game type game by simply replacing the battle module.
+
+Just think smartly. The more things you can think to add, the better, because we want to give the users the MOST amount of freedom
+when it comes to making the story how they want it to be. Nothing frustrates me more than wanting to put your creativity down on paper
+and being restricted by the applications capabilities.
+
+The exporting module will be incredibly interesting to do, there will be a bunch of rules it will have to follow, redundant data
+that needs to be removed, crash orders that will need to be avoided and such. itll be the hardest part i reckon but itll be super
+fun to code.
+
+an incredibly ambitious project, if we can get this done then fair play to the both of us but it should be a fun project nonetheless.
+
+an exported project will have its own save files, install itself into whatever directory the installer chooses, and maybe if it
+goes crazy, achievements could be added but im thinking WAY into the future.

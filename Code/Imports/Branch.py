@@ -27,5 +27,18 @@ def branch_import(imports, base_package=""):
 
 
 import Console
+import os
 
-target = "Code/Imports/TYPEWRITER/TEST.py"
+def find_secondary():
+    return ["Typewriter"]
+
+def import_secondary(modules):
+    for module in modules:
+        print("Importing second level - %s module" % module)
+
+
+secondary = find_secondary()
+import_secondary(secondary)
+
+
+

@@ -10,3 +10,50 @@
 ! Luck      |    ! Special Attributes [TBD]
 ! Health    |
 ! Accuracy  |
+
+
+I want to change these personally, but do what you think is right :3
+
+I like the idea of there being a stat, and then a opposite stat for that stat.
+so for example, attack/strength/brute would have the opposite stat of defence/hardness/whatever
+
+magic damage/wisdom/blessed would have the opposite stat of resistance/holiness/you get the idea
+
+speed which affects hit rate and your turn order would have the opposite of dodge/avoidance/dexterity
+
+The idea is that everything has its opposite, so if you have someone who is particularly good in strength, anyone who has
+good defense will be their direct counter.
+
+Species, background, and class will change the amount that stats increase when increasing a level.
+so for example, a species that is hardy, and is a royal knight class would have a really high defense modifier. each time they
+level up, they have a much larger chance of their defense stat increasing by a larger amount. so by the time they reach maximum
+level, they will have a much higher defense level than someone who is incredibly fragile.
+
+The whole premise for the turn-based side will be entirely on percent chances. so someone with an incredibly good hit stat
+will have a much higher chance of actually hitting the opponent. someone with a normal hit rate will find it more and more difficult
+to land a hit on someone with a high avoid rate.
+
+This is just the vision though, heavily inspired by fire emblem game logic but any changes are welcome and will make the
+game more unique
+
+then similarly to pokemon, you will have the option to use different weapons, abilities and skills that will affect the turn stats
+so for example a light sword would be incredibly more easier to hit a target in comparison to a really heavy sword, but using a skill
+that makes it easier for heavy weapons to hit would temporarily switch those effects etc just an idea.
+
+in addition, im not sure how much you know about levels and experience but each character will have a number of experience points.
+the level a character is at will be determined by a mathematical operation. there will be a maximum level and a minimum level.
+when you defeat an enemy, you get experience in relation to its difficulty level in comparison to you. each time you level up,
+stats have a certain percent chance to increase and by a specific amount. logic for this will be figured out later but you can imagine
+it as this:
+
+attack power is at 36 at level 7.
+their attack has a 75% chance to upgrade, so itll try and it succeeds.
+their attack increases by 1
+their attack increase succeeds again so increases by another 1
+their attack increase succeeds again so increases by another 1
+their attack increase fails this time so when leveling up to level 8, their attack power is 36 + 3 = 39
+Then to limit the absolute insane chance someone gets +50 to their attack, stat increases will be capped by a specific amount
+like +5 for example
+
+thems the haps, ask questions because i have this whole idea planned in my head but its hard to communicate this into words
+and even harder to communicate those words into actual code

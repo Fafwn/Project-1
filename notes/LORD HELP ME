@@ -20,3 +20,23 @@ The main level will handle the logging, third level branch console importing, an
 
 
 I need to draw this out or something jesus fucking christ
+
+
+
+Top level - Handler
+
+Secondary level - subparts
+
+Third level - components
+
+
+
+
+each secondary level component will have a import dictionary that has directories as indexes, and an array of files as values
+
+BLEAH
+
+Second level needs to inherit every third level
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa
+

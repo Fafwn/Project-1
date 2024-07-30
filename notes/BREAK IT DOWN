@@ -1,0 +1,18 @@
+ITS SO BEYOND IMPORTANT TO EMPHASISE THE BREAKDOWN.
+
+This game will be huge
+lots of working parts, parts that should not interact with each other. because of this, using a modular approach is essential
+to separate code. if one module goes completely caput, it wont affect other modules.
+
+splitting things into parts is hard to visualise, but the idea is you have the
+GUI
+text handler
+character handler
+battle handler
+etc
+
+therefore if you need to change how battles work, you simply replace and plug in a new battle handler and itll run everything
+it needs from that module. also makes it easier to fix shit when it goes wrong because if a visual error happens, you know
+its to do with the GUI
+
+sounds patronising but if we get on the same page then i can miraculously suck your metaphorical ethereal dong

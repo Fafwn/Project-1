@@ -5,10 +5,6 @@ logging.basicConfig(format="%(levelname)s:%(filename)s:%(message)s", level=loggi
 
 
 class Console:
-    flags = {
-        "updated": False
-    }
-
     def __init__(self):
         self.terminal = ""  # acts as output
         self.content = ""  # acts as input
@@ -17,14 +13,13 @@ class Console:
         logging.info("Importing object %s from %s" % (object, dir))
         pass
 
-    def get_input(self, content):
+    def get(self, content):
         self.content = content
 
-    def push(self):
-        self.terminal = self.content
+    def push(self, content=None):
+        self.terminal = self.content if content == None else content
         self.flags["updated"] = True
 
     def peek(self):
         self.flags["updated"] = False
         return self.terminal
-

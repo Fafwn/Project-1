@@ -40,3 +40,15 @@ ________________________________________________________________________________
 |_________________________________________________________________________________________________________________________________________|
 
 
+Ignore this for now im tryna rethink of how to do everything
+
+
+
+
+as said in LORD HELP ME, im tryna figure out a three tier module approach, will figure it out some day im sure, give me a
+fucking break you stupid ass bitch
+
+on also we do not print anything anymore. we use logging, because it shows stuff to the python terminal, tells you which
+module is talking, when it happened, and can be filtered if we dont need as much information. in addition, we can make critical
+logs save to a log file during runtime to more easily keep track of log records.
+
