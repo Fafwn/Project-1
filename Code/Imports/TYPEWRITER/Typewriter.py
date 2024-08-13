@@ -1,13 +1,15 @@
 import logging
 
+
+logger = logging.getLogger(__name__)
+
 imports = {
     "COMMANDS": ["MEMORY", "TRANSLATOR"],
     "SETTINGS": ["HANDLER", "VALUES"],
     "STORYBOARD": ["STORYBOARD"]
 }
 
-logger = logging.getLogger(__name__)
-logging.basicConfig(format="%(levelname)s:%(filename)s:%(message)s", level=logging.INFO)
+
 
 def run():
     pass

@@ -1,44 +1,57 @@
-"""import importlib
-
-imported_modules = set()
-import_dir = "Imports"
-
-
-def branch_import(imports, base_package=""):
-    for directory, modules in imports.items():
-        for module in modules:
-            module_path = "%s.%s.%s.%s" % (
-                import_dir, base_package, directory, module) if base_package else "%s.%s.%s" % (import_dir, directory, module)
-            if module_path not in imported_modules:
-                try:
-                    imported_modules.add(module_path)
-                    imported_module = importlib.import_module(module_path)
-                    print("Imported %s.py" % module_path)
-                    if hasattr(imported_module, "imports"):
-                        nested_imports = getattr(imported_module, "imports")
-                        branch_import(nested_imports,
-                                      base_package="%s.%s" % (base_package, directory) if base_package else directory)
-                except ImportError as e:
-                    print("Error importing %s: %s" % (module_path, e))
-
-
-# Not sure if i liked this, removing for now"""
-
-
-
-import Console
 import os
+import logging
+import sys
+import importlib.util
+
+logger = logging.getLogger(__name__)
+
 
 def find_secondary():
-    return ["Typewriter"]
+    cwd = os.getcwd()
+    code_dir = "Imports"
+    seconds = (
+        [part for part in [name for name in os.listdir(code_dir) if os.path.isdir(os.path.join(code_dir, name))] if
+         os.path.isfile(f"{code_dir}/{part}/{part}.py")])
+    seconds_dir = ["%s\%s\%s\%s.py" % (cwd, code_dir, part, part[0] + part[1:].lower()) for part in seconds]
+    return seconds, seconds_dir
+
 
 def import_secondary(modules):
-    for module in modules:
-        print("Importing second level - %s module" % module)
+    logger.debug("Importing Tier 2...")
+    for name, directory in zip(modules[0], modules[1]):
+        logger.debug("Importing second level - %s module [%s]" % (name, directory))
+        spec = importlib.util.spec_from_file_location(name, directory)
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[name] = module
+        spec.loader.exec_module(module)
+        logger.debug("Imported %s" % name)
+    logger.debug("Tier 2 done.")
 
 
-secondary = find_secondary()
-import_secondary(secondary)
+def find_third():
+    thirds = []
+    thirds_dir = []
+    return thirds, thirds_dir
 
 
+def import_third(modules):
+    logger.debug("Importing Tier 3...")
 
+    logger.debug("Tier 3 done.")
+
+
+def display():
+    logger.debug([
+        name for name, module in sys.modules.items() if
+        hasattr(module, '__file__') and module.__file__ and module.__file__.startswith(
+            os.path.dirname(os.path.abspath(__file__)))])
+    logger.info("")
+
+
+def run():
+    logger.debug("Branch importer imported.")
+    second = find_secondary()
+    import_secondary(second)
+    third = find_third()
+    import_third(third)
+    display()
