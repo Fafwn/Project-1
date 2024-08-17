@@ -1,0 +1,30 @@
+Putting things aside for now since theres a cosmic fuck tonne of things to do rn. SO im gonna try split the work into 
+parts and ensure Ive got everything
+
+
+To simplify, I wnt there to be an inclusion for everything
+
+the whole GUI will be its own separate section with probably the most work in it because it will directly link the whole program together
+
+the main gui will essentially be the program itself but will be directly linked to the top tier program 
+
+
+
+Bits i can think of off the top of my head when it comes to the actual game itself is a separate engine for:
+
+- Map handling
+- Cutscene handling 
+- Character handling
+- Battle handling
+- Typewriter
+- Inventory Handling
+- 
+
+
+And then separate from that are components for the game developer itself:
+
+- GUI
+- AHHHHHHHH
+
+come to realise how big of a challenge this will be but dont bite the hand that fingers you or whatever 
+

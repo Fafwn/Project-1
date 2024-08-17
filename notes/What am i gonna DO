@@ -1,0 +1,28 @@
+WHAT 
+
+
+Think of the RPG. What do you want.
+
+I want there to be a world thats built 
+
+okay to do this you need map generation
+
+map generation
+
+you will need a HUGE bit of data to represent the map itself
+
+spots will firstly either be walkable (1) or non-walkable (0)
+
+
+
+The grand map will split into sections. I was originally going to have these fixed size but i want them to be variable shapes.
+
+For example:
+
+| |*1*|*2*|*3*|*4*|*5*|
+|---|---|---|---|---|---|
+|*A*|0|0|**1**|0|0|
+|*B*|0|**1**|**1**|0|0|
+|*C*|**1**|**1**|**1**|**1**|**1**|
+|*D*|0|**1**|**1**|**1**|**1**|
+|*E*|0|0|0|0|**1**|

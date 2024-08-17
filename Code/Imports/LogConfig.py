@@ -6,5 +6,4 @@ def setup_logger():
     logging.basicConfig(level=logging.DEBUG, format=log_format, datefmt="%H:%M:%S")
 
 
-def run():
-    setup_logger()
+setup_logger()

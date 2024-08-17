@@ -1,3 +1,4 @@
+import os
 import logging
 
 logger = logging.getLogger(__name__)
@@ -11,12 +12,13 @@ class Storyboard:
         "RET": "/"
     }
 
-    def __init__(self, story_file="STORYBOARD/STORYBOARD.txt"):
+    def __init__(self, story_file="%s%s" % (os.getcwd(), "\Imports\TYPEWRITER\STORYBOARD\STORYBOARD.txt")):
         """
         Initialise Storyboard with default values
 
         :param story_file: Storyboard text file
         """
+
         self.TP = 0
         self.clean()
         self.story_file = story_file
