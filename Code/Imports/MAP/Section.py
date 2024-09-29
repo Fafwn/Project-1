@@ -1,7 +1,6 @@
 import logging
 import math
-
-logger = logging.getLogger(__name__)
+from Config import Config
 
 
 class Section:
@@ -12,13 +11,8 @@ class Section:
         - Toolbar button functionality!!!
     """
 
-    variables = {
-        "Max Tile": 15,  # Maximum vertical and horizontal tiles
-        "Max Layer": 7,  # Maximum layers
-        "Default Width": 5,
-        "Default Height": 5,
-        "Tile": ["None", "Walkable", "Custom1", "Custom2"]  # Different types of placeable tiles
-    }
+    variables = Config("Section").data
+
     # Initialisation
     section_name = ""
     section_height, section_width, section_depth = (0, 0, 1)
@@ -29,10 +23,10 @@ class Section:
         """
         Initialises section object
 
-        :param name: Name of section
-        :param data: The full section data. Default None
-        :param width: The scope width
-        :param height: The scope height
+        :param name: str: Name of section
+        :param data: [int]: The full section data. Default None
+        :param width: int: The scope width
+        :param height: int: The scope height
         """
 
         self.section_name = name  # Set name
@@ -43,9 +37,9 @@ class Section:
         """
         Changes/updates the working scope
 
-        :param height: Height of scope
-        :param width: Width of scope
-        :param layer: Which layer scope is on
+        :param height: int: Height of scope
+        :param width: int: Width of scope
+        :param layer: int:  Which layer scope is on
         """
         # Set default values
         height = height or self.section_height
@@ -96,7 +90,7 @@ class Section:
         """
         Edit the amount of layers
 
-        :param amount: Can be a positive or negative number that increases layers by amount
+        :param amount: int: Can be a positive or negative number that increases layers by amount
         """
 
         if 1 <= self.section_depth + amount <= self.variables["Max Layer"]:  # Binds layers
@@ -115,7 +109,8 @@ class Section:
         """
         "Paints" the index within self.data to the paint value
 
-        :param index: Index of self.data to change
+        :param index: int: Index of self.data to change
+        :param val: int: Value to change into
         """
 
         logging.info(f"Changing index {index} to {val} ({self.data[index]}>{val})")
