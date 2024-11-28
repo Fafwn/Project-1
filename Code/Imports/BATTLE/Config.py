@@ -2,7 +2,7 @@ import yaml
 import logging
 
 
-config_path = "C:/Users/kaiki/IdeaProjects/Project-1/Code/Imports/MAP/config.yaml"
+config_path = "C:/Users/kaiki/IdeaProjects/Project-1/Code/Imports/BATTLE/config.yaml"
 logger = logging.getLogger(__name__)
 
 

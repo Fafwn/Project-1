@@ -1,0 +1,7 @@
+Handler:
+  usedStats:
+    - "Attack"
+    - "Wisdom"
+    - "Defense"
+    - "Resistance"
+    - "Speed"
