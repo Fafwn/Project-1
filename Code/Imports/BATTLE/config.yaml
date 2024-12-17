@@ -1,7 +1,43 @@
-Handler:
+HANDLER:
   usedStats:
     - "Attack"
     - "Wisdom"
     - "Defense"
     - "Resistance"
     - "Speed"
+
+
+WEAPON:
+  Type:
+    - "Physical"
+    - "Magic"
+  Range:
+    - 1
+    - 2
+    - 3
+
+  details:
+    - name: "Name"
+      type: "string"
+      default: "Unknown Weapon"
+    - name: "Might"
+      type: "integer"
+    - name: "Range"
+      type: "integer"
+    - name: "Hit"
+      type: "integer"
+    - name: "Critical"
+      type: "integer"
+    - name: "Description"
+      type: "string"
+      default: "No description available."
+    - name: "Type"
+      type: "string"
+    - name: "Sprites"
+      type: "list"
+    - name: "Animations"
+      type: "list"
+
+  EXTENSION: ".kj"
+  SPACER: ";"
+  DIRECTORY: "Weapons"

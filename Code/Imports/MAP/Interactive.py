@@ -1,6 +1,6 @@
 import tkinter as tk
 import Section
-from Config import Config
+from Code.Imports.ConfigMaster import Config
 import logging
 
 log_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

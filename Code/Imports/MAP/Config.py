@@ -1,7 +1,7 @@
 import yaml
 import logging
 
-
+"""
 config_path = "C:/Users/kaiki/IdeaProjects/Project-1/Code/Imports/MAP/config.yaml"
 logger = logging.getLogger(__name__)
 
@@ -18,3 +18,4 @@ class Config:
             return config_data.get(self.module_name, {})
         else:
             logger.critical(f"Module {self.module_name} not found in config.yaml")
+"""

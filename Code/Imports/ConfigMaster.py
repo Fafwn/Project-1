@@ -2,16 +2,16 @@ import yaml
 import logging
 from typing import Dict, Any, Optional
 from pathlib import Path
+import inspect
 
-CONFIG_PATH = Path("C:/Users/kaiki/IdeaProjects/Project-1/Code/Imports/BATTLE/config.yaml")
 logger = logging.getLogger(__name__)
 
 class Config:
     """
     A class to manage configuration settings for different modules.
     """
-
     _cached_config: Optional[Dict[str, Any]] = None
+    _config_path: Optional[Path] = None
 
     def __init__(self, module_name: str):
         """
@@ -24,6 +24,38 @@ class Config:
         self.data = self.get_config()
 
     @classmethod
+    def resolve_config_path(cls) -> Path:
+        """
+        Resolve the path to the configuration file dynamically based on the importing file's directory.
+
+        Returns:
+            Path: The resolved path to the configuration file.
+        """
+        if cls._config_path is not None:
+            return cls._config_path
+
+        # Inspect the call stack to find the importing file
+        stack = inspect.stack()
+        for frame_info in stack:
+            if frame_info.filename != __file__:  # Ignore ConfigMaster itself
+                importing_file = frame_info.filename
+                importing_dir = Path(importing_file).parent
+                break
+        else:
+            logger.error("Could not determine the importing file.")
+            raise RuntimeError("Unable to resolve the configuration path.")
+
+        # Look for a config.yaml in the importing file's directory
+        config_path = importing_dir / "config.yaml"
+        if not config_path.exists():
+            logger.error(f"Configuration file {config_path} not found.")
+            raise FileNotFoundError(f"No configuration file found in {importing_dir}.")
+
+        logger.info(f"Resolved configuration file path: {config_path}")
+        cls._config_path = config_path
+        return cls._config_path
+
+    @classmethod
     def load_config_file(cls) -> Dict[str, Any]:
         """
         Load the configuration file and cache it.
@@ -34,15 +66,14 @@ class Config:
         if cls._cached_config is not None:
             return cls._cached_config
 
+        config_path = cls.resolve_config_path()
+
         try:
-            with CONFIG_PATH.open("r") as file:
-                cls._cached_config = yaml.safe_load(file)
-            logger.info(f"Successfully loaded configuration from {CONFIG_PATH}")
-        except FileNotFoundError:
-            logger.error(f"Configuration file {CONFIG_PATH} not found")
-            cls._cached_config = {}
+            with config_path.open("r") as file:
+                cls._cached_config = yaml.safe_load(file) or {}
+            logger.info(f"Successfully loaded configuration from {config_path}")
         except yaml.YAMLError as e:
-            logger.error(f"Error parsing configuration file {CONFIG_PATH}: {e}")
+            logger.error(f"Error parsing configuration file {config_path}: {e}")
             cls._cached_config = {}
         except Exception as e:
             logger.error(f"Unexpected error loading configuration file: {e}")
@@ -100,5 +131,6 @@ class Config:
         Force a reload of the configuration file, clearing the cache.
         """
         cls._cached_config = None
+        cls._config_path = None
         cls.load_config_file()
         logger.info("Configuration reloaded")

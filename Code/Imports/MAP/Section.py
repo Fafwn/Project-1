@@ -1,6 +1,6 @@
 import logging
 import math
-from Config import Config
+from Code.Imports.ConfigMaster import Config
 
 
 class Section:
